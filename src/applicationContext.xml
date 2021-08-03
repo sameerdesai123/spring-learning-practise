@@ -21,12 +21,18 @@
     <bean id="myCoach" class="com.sameer.iocdemo.BaseballCoach">
     	<constructor-arg ref="myFortune"></constructor-arg>
     </bean>
-     -->
-
-	<bean id="myCoach" class="com.sameer.iocdemo.TrackCoach">
-    	<!-- Setup constructor injection -->
+    
+    <bean id="myCoach" class="com.sameer.iocdemo.TrackCoach">
     	<constructor-arg ref="myFortune"></constructor-arg>
     </bean>
+     -->
+     
+    <bean id="myCoach" class="com.sameer.iocdemo.CricketCoach">
+    	<!-- Setup setter injection -->
+    	<property name="fortuneService" ref="myFortune"></property>
+    </bean>
+
+	
     
 </beans>
 
