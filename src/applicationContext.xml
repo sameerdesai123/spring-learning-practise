@@ -11,6 +11,7 @@
 	<context:property-placeholder location="classpath:sports.properties"/>
 	<!-- Define dependencies here -->
 	<bean id="myFortune" class="com.sameer.iocdemo.HappyFortuneService"></bean>
+	<bean id="randomFortune" class="com.sameer.iocdemo.RandomFortuneService"></bean>
 	
     <!-- Define your beans here -->
     
@@ -30,7 +31,7 @@
      
     <bean id="myCricketCoach" class="com.sameer.iocdemo.CricketCoach">
     	<!-- Setup setter injection -->
-    	<property name="fortuneService" ref="myFortune"></property>
+    	<property name="fortuneService" ref="randomFortune"></property>
     	<!-- Inject literal values -->
     	<property name="emailAddress" value="${foo.email}"></property>
     	<property name="team" value="${foo.team}"></property>
