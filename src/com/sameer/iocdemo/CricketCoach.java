@@ -8,27 +8,22 @@ public class CricketCoach implements Coach {
 	
 	public CricketCoach() {
 		super();
-		System.out.println("------ Inside cricket coach constructor");
 	}
 
 	public CricketCoach(FortuneService fortuneService) {
 		super();
-		System.out.println("------ Inside cricket coach constructor");
 		this.fortuneService = fortuneService;
 	}
 
 	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println("----- Inside cricket coach setter method");
 		this.fortuneService = fortuneService;
 	}
 	
 	public void setEmailAddress(String emailAddress) {
-		System.out.println("----- Setting email address");
 		this.emailAddress = emailAddress;
 	}
 
 	public void setTeam(String team) {
-		System.out.println("----- Setting team");
 		this.team = team;
 	}
 	
@@ -47,7 +42,16 @@ public class CricketCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		return "Go Cricket! " + fortuneService.getFortune();
+		return "Fortune: " + fortuneService.getFortune();
+	}
+	
+	// init-method
+	public void init() {
+		System.out.println("Cricket Coach: INIT method");
 	}
 
+	// destroy-method
+	public void destroy() {
+		System.out.println("Cricket Coach: Destroy method");
+	}
 }
